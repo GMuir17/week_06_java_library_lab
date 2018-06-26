@@ -1,3 +1,5 @@
+import com.sun.tools.javac.jvm.Gen;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -37,13 +39,20 @@ public class Library {
     }
 
 
-    public int numberOfBooksByGenre(GenreType genre) {
-        int total =  0;
-       if (this.genreTotals.containsKey(genre)){
-           total +=1;
-       }
-        return total;
+    public HashMap<GenreType, Integer> numberOfBooksByGenre() {
+        HashMap<GenreType, Integer> genreTotals = new HashMap<>();
+        for ( Book book : this.collection){
+            if (genreTotals.containsKey(book.getGenre())) {
+                Integer total = genreTotals.get(book.getGenre());
+                total += 1;
+                genreTotals.put(book.getGenre(), total);
+            } else {
+                genreTotals.put(book.getGenre(), 1);
+            }
+        }
+        return genreTotals;
     }
+
 
 }
 
