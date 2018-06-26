@@ -37,5 +37,13 @@ public class Library {
     }
 
 
+    public int numberOfBooksByGenre(GenreType genre) {
+        int total =  0;
+       if (this.genreTotals.containsKey(genre)){
+           total +=1;
+       }
+        return total;
+    }
+
 }
 

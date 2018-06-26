@@ -51,6 +51,12 @@ public class LibraryTest {
         assertEquals(1, library.genreTotalCount());
     }
 
+    @Test
+    public void getGenreValueFromHashMap(){
+        library.addBook(book);
+        assertEquals(1,library.numberOfBooksByGenre(GenreType.CRIME));
+    }
+
 }
 
 
