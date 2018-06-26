@@ -39,6 +39,11 @@ public class LibraryTest {
         assertEquals(0, library.bookCount());
     }
 
+    @Test
+    public void genreTotalHashMapStartsEmpty() {
+        assertEquals(0, library.genreTotalCount());
+    }
+
 }
 
 
