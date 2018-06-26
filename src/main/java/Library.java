@@ -20,6 +20,7 @@ public class Library {
     public void addBook(Book book) {
         if (bookCount() < this.capacity)
         this.collection.add(book);
+        addBookToHashMap(book);
     }
 
     public Book removeBook() {
@@ -29,5 +30,12 @@ public class Library {
     public int genreTotalCount() {
         return genreTotals.size();
     }
+
+    public void addBookToHashMap(Book book) {
+        GenreType bookGenre = book.getGenre();
+        this.genreTotals.put(bookGenre, 1);
+    }
+
+
 }
 

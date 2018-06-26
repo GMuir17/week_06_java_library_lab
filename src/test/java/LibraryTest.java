@@ -11,6 +11,7 @@ public class LibraryTest {
     @Before
     public void setUp() {
         library = new Library(2);
+        book = new Book("Sherlock Holmes", GenreType.CRIME);
     }
 
     @Test
@@ -42,6 +43,12 @@ public class LibraryTest {
     @Test
     public void genreTotalHashMapStartsEmpty() {
         assertEquals(0, library.genreTotalCount());
+    }
+
+    @Test
+    public void canAddBookToHashMap() {
+        library.addBook(book);
+        assertEquals(1, library.genreTotalCount());
     }
 
 }
