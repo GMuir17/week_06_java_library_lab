@@ -13,7 +13,7 @@ public class BorrowerTest {
     public void setUp() {
         borrower = new Borrower();
         library = new Library(10);
-        book = new Book("Consider Phlebas");
+        book = new Book("Consider Phlebas", GenreType.SCIFI);
     }
 
     @Test

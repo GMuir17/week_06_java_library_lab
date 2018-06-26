@@ -9,11 +9,16 @@ public class BookTest {
 
     @Before
     public void setUp() {
-        book = new Book("Look To Windward");
+        book = new Book("Look To Windward", GenreType.SCIFI);
     }
 
     @Test
     public void hasTitle() {
         assertEquals("Look To Windward", book.getTitle());
+    }
+
+    @Test
+    public void hasGenre(){
+        assertEquals(GenreType.SCIFI,book.getGenre());
     }
 }
