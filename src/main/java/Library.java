@@ -20,6 +20,8 @@ public class Library {
     }
 
 
-
+    public void removeBook() {
+        this.collection.remove(0);
+    }
 }
 
